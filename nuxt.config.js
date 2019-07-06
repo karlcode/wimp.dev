@@ -39,7 +39,9 @@ module.exports = {
   ],
  generate: {
    routes: [
-     '/'
+     '/blog/the-art-of-self-taught',
+     '/blog/2',
+     '/blog/3'
    ]
  },
   /*

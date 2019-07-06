@@ -40,7 +40,7 @@ export default {
   },
   head () {
     return {
-      title: 'Prismic Nuxt.js Blog',
+      title: 'wimp.dev - A blog for the underdogs',
     }
   },
   async asyncData({context, error, req}) {
