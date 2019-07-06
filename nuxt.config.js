@@ -37,7 +37,11 @@ module.exports = {
     '@/assets/css/resetr.css',
     '@/assets/css/common.css'
   ],
-
+ generate: {
+   routes: [
+     '/'
+   ]
+ },
   /*
   ** Plugins to load before mounting the App
   */
