@@ -1,11 +1,6 @@
 [{
-  "id": "blog_home",
-  "name": "Blog Home",
-  "repeatable": false,
-  "value": "blog_home.json"
-}, {
-  "id": "post",
-  "name": "Post",
+  "id": "page",
+  "name": "Page",
   "repeatable": true,
-  "value": "post.json"
+  "value": "page.json"
 }]
