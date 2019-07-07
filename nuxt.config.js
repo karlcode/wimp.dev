@@ -5,7 +5,7 @@ const pkg = require('./package')
 const PrismicConfig = require('./prismic.config')
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
 
   /*
