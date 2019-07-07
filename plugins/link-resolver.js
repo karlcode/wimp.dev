@@ -8,10 +8,12 @@ export default function (doc) {
   }
 
   if (doc.type === 'blog_home') {
+    console.log("HIT BLOG HOME");
     return '/'
   }
 
   if (doc.type === 'post') {
+    console.log("POST");
     return '/blog/' + doc.uid
   }
 
