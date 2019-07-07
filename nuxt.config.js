@@ -1,5 +1,6 @@
 const pkg = require('./package')
 const PrismicConfig = require('./prismic.config')
+const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
@@ -37,13 +38,10 @@ module.exports = {
     '@/assets/css/resetr.css',
     '@/assets/css/common.css'
   ],
- generate: {
-   routes: [
-     '/blog/the-art-of-self-taught',
-     '/blog/2',
-     '/blog/3'
-   ]
- },
+  generate: {
+    routes: () => axios.get('https://wimp-blog.prismic.io/api/v2')
+      .then(res => res.data.map((blog) => `/blog/${blog.id}`)),
+  },
   /*
   ** Plugins to load before mounting the App
   */
