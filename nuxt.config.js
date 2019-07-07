@@ -1,9 +1,9 @@
 const pkg = require('./package')
 const PrismicConfig = require('./prismic.config')
-const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
+  
 
   /*
   ** Headers of the page
@@ -38,10 +38,6 @@ module.exports = {
     '@/assets/css/resetr.css',
     '@/assets/css/common.css'
   ],
-  generate: {
-    routes: () => axios.get('https://wimp-blog.prismic.io/api/v2')
-      .then(res => res.data.map((blog) => `/blog/${blog.id}`)),
-  },
   /*
   ** Plugins to load before mounting the App
   */
@@ -54,7 +50,12 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-      '@nuxtjs/axios',
+    ['prismic-nuxt', {
+      endpoint: 'https://wimp-blog.cdn.prismic.io/api/v2',
+      linkResolver: function (doc, ctx) {
+        return '/'
+      }
+    }]
   ],
 
   /*
