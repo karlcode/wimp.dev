@@ -72,9 +72,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    ['nuxt-sass-resources-loader', '~assets/styles/variables/variables.scss'],
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
     ['prismic-nuxt', {
       endpoint: "https://wimp-blog.prismic.io/api/v2",
       linkResolver: function (doc) {
