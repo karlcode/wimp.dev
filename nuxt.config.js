@@ -72,26 +72,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    ['prismic-nuxt', {
-      endpoint: "https://wimp-blog.prismic.io/api/v2",
-      linkResolver: function (doc) {
-        if (doc.isBroken) {
-          return '/not-found'
-        }
-      
-        if (doc.type === 'blog_home') {
-          console.log("HIT BLOG HOME1");
-          return '/'
-        }
-      
-        if (doc.type === 'post') {
-          console.log("POST");
-          return '/blog/' + doc.uid
-        }
-      
-        return '/not-found'
-      }
-    }]
   ],
   /*
   ** Axios module configuration
