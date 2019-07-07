@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const pkg = require('./package')
 const PrismicConfig = require('./prismic.config')
 
@@ -69,6 +71,17 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [],
+  generate: {
+    routes: function () {
+      return axios.get('https://wimp-blog.prismic.io/api/v2/blog')
+      .then((res) => {
+        console.log(res)
+        return res.data.map((page) => {
+          return '/blog/' + page.id
+        })
+      })
+    }
+  },
 
   /*
    ** Build configuration
