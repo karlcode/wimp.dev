@@ -8,7 +8,7 @@ export default function (doc) {
   }
 
   if (doc.type === 'blog_home') {
-    console.log("HIT BLOG HOME");
+    console.log("HIT BLOG HOME1");
     return '/'
   }
 

@@ -70,17 +70,20 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
-  generate: {
-    routes: function () {
-      return axios.get('https://wimp-blog.prismic.io/api/v2/blog')
-      .then((res) => {
-        console.log(res)
-        return res.data.map((page) => {
-          return '/blog/' + page.id
-        })
-      })
-    }
+  modules: [
+    ['nuxt-sass-resources-loader', '~assets/styles/variables/variables.scss'],
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    ['prismic-nuxt', {
+      endpoint: prismicConfig.apiEndpoint,
+      linkResolver: prismicConfig.linkResolver
+    }]
+  ],
+  /*
+  ** Axios module configuration
+  */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
   },
 
   /*
