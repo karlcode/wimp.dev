@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { api } from 'prismic-javascript';
 
 const pkg = require('./package')
 const PrismicConfig = require('./prismic.config')
@@ -75,8 +76,24 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     ['prismic-nuxt', {
-      endpoint: prismicConfig.apiEndpoint,
-      linkResolver: prismicConfig.linkResolver
+      endpoint: "https://wimp-blog.prismic.io/api/v2",
+      linkResolver: function (doc) {
+        if (doc.isBroken) {
+          return '/not-found'
+        }
+      
+        if (doc.type === 'blog_home') {
+          console.log("HIT BLOG HOME1");
+          return '/'
+        }
+      
+        if (doc.type === 'post') {
+          console.log("POST");
+          return '/blog/' + doc.uid
+        }
+      
+        return '/not-found'
+      }
     }]
   ],
   /*
