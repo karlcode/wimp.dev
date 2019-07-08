@@ -14,7 +14,9 @@
       <p class="blog-description">{{ $prismic.richTextAsPlain(fields.description) }}</p>
     </div>
     <!-- Vue reference for blog posts component -->
+    <keep-alive>
     <blog-posts/>
+    </keep-alive>
   </div>
   <!-- If no content return message -->
   <div v-else class="home">
