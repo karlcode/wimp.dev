@@ -1,5 +1,8 @@
 <template>
-    <transition name="fade">
+    <transition
+        name="fade"
+        mode="out-in"
+      >
   <!-- Vue conditional to check if there is any content in document -->
   <div key=1 v-if="hasContent" class="page">
       <div class="home">
@@ -13,14 +16,12 @@
         <!-- <p class="blog-description">{{ $prismic.richTextAsPlain(fields.description) }}</p> -->
       </div>
       <!-- Vue reference for blog posts component -->
-      <keep-alive>
         <blog-posts />
-      </keep-alive>
   </div>
   <!-- If no content return message -->
-  <div v-else class="home">
+  <!-- <div v-else class="home">
     <p>Please add some content to your blog home document.</p>
-  </div>
+  </div> -->
     </transition>
 </template>
 
@@ -34,6 +35,7 @@ export default {
   },
   data() {
     return {
+      prevHeight: 0,
       documentId: "",
       fields: {
         headline: null,
@@ -72,7 +74,7 @@ export default {
       ) {
         this.hasContent = true;
       }
-    }
+    },
   },
   created() {
     this.getContent();
@@ -105,9 +107,12 @@ export default {
   border-bottom: 1px solid #dadada;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition-duration: 0.6s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  overflow: hidden;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-active /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 /* Media Queries */

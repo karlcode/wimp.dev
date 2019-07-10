@@ -1,6 +1,8 @@
 <template>
   <nav class="footer">
+    <router-link to="./">
     <h2>wimp.dev</h2>
+    </router-link>
   </nav>
 </template>
 
