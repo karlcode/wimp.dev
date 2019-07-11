@@ -14,7 +14,7 @@
   </div>
   <!-- If no blog posts return message -->
   <div v-else class="blog-main">
-    <p>No Posts published at this time.</p>
+    <p>Loader spinner here</p>
   </div>
 </template>
 
