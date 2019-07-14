@@ -10,12 +10,12 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    // {
+    //   path: '/',
+    //   redirect: { name: 'blog-home' }
+    // },
     {
       path: '/',
-      redirect: { name: 'blog-home' }
-    },
-    {
-      path: '/blog',
       name: 'blog-home',
       component: BlogHome
     },
