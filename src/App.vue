@@ -1,34 +1,31 @@
 <template>
   <div id="app">
-    <header-bar/>
-         <transition
-        name="fade"
-        mode="out-in"
-      >
+    <header-bar />
+    <transition name="fade" mode="out-in">
       <keep-alive>
-    <router-view :key="$route.fullPath"/>
+        <router-view :key="$route.fullPath" />
       </keep-alive>
-        </transition>
-    <!-- <footer-prismic/> -->
+    </transition>
+    <footer-prismic/>
   </div>
 </template>
 
 <script>
-import FooterPrismic from './components/FooterPrismic.vue'
-import HeaderBar from './components/HeaderBar.vue'
+import FooterPrismic from "./components/FooterPrismic.vue";
+import HeaderBar from "./components/HeaderBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     FooterPrismic,
     HeaderBar
   },
   data() {
     return {
-      prevHeight: 0,
+      prevHeight: 0
     };
   }
-}
+};
 </script>
 
 <style>
@@ -38,13 +35,13 @@ export default {
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.6s;
-  transition-property:opacity;
+  transition-property: opacity;
   transition-timing-function: ease;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 </style>

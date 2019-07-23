@@ -1,10 +1,7 @@
 <template>
-    <transition
-        name="fade"
-        mode="out-in"
-      >
-  <!-- Vue conditional to check if there is any content in document -->
-  <div key=1 v-if="hasContent" class="page">
+  <transition name="fade" mode="out-in">
+    <!-- Vue conditional to check if there is any content in document -->
+    <div key="1" v-if="hasContent" class="page">
       <div class="home">
         <!-- Button to edit document in dashboard -->
         <prismic-edit-button :documentId="documentId" />
@@ -16,13 +13,13 @@
         <!-- <p class="blog-description">{{ $prismic.richTextAsPlain(fields.description) }}</p> -->
       </div>
       <!-- Vue reference for blog posts component -->
-        <blog-posts />
-  </div>
-  <!-- If no content return message -->
-  <!-- <div v-else class="home">
+      <blog-posts />
+    </div>
+    <!-- If no content return message -->
+    <!-- <div v-else class="home">
     <p>Please add some content to your blog home document.</p>
-  </div> -->
-    </transition>
+    </div>-->
+  </transition>
 </template>
 
 <script>
@@ -74,7 +71,7 @@ export default {
       ) {
         this.hasContent = true;
       }
-    },
+    }
   },
   created() {
     this.getContent();
@@ -85,6 +82,7 @@ export default {
 
 <style scoped>
 .home {
+  padding-top: 100px;
   max-width: 700px;
   margin: auto;
   text-align: center;
@@ -106,7 +104,8 @@ export default {
   font-family: "Lato", sans-serif;
   border-bottom: 1px solid #dadada;
 }
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition-duration: 0.6s;
   transition-property: opacity;
   transition-timing-function: ease;
