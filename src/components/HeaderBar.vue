@@ -1,5 +1,5 @@
 <template>
-  <nav class="footer">
+  <nav class="header">
     <router-link to="./">
     <h2>wimp.dev</h2>
     </router-link>
@@ -13,9 +13,12 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  padding: 40px 0;
-  max-width: 700px;
+.header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
   margin: 0 auto;
   text-align: center;
   border-top: 1px solid #DADADA;
