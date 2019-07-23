@@ -14,7 +14,6 @@ export default {
 
 <style scoped>
 .footer {
-  height: 300px;
   padding: 40px 0;
   max-width: 700px;
   margin: 0 auto;
