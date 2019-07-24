@@ -14,7 +14,9 @@ export default {
 
 <style scoped>
 .header {
-  background: rgba(50, 50, 50, 0.5);
+  z-index: 999;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  
   top: 0;
   left: 0;
   position: fixed;
