@@ -24,5 +24,10 @@ export default {
   padding: 20px;
   margin: 0 auto;
   text-align: center;
+  transition: 1s all;
+}
+
+.header:hover {
+  background: beige;
 }
 </style>
