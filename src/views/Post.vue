@@ -2,10 +2,11 @@
   <div class="main">
     <div class="outer-container">
       <div class="back">
-        <router-link to="/">back to list</router-link>
+        <router-link to="./">back to list</router-link>
       </div>
       <!-- Button to edit document in dashboard -->
       <prismic-edit-button :documentId="documentId"/>
+
 
       <h1 class="blog-title">{{ $prismic.richTextAsPlain(fields.title) }}</h1>
       <p class="blog-post-meta"><span class="created-at">{{ Intl.DateTimeFormat('en-US', dateOptions).format(new Date(fields.date)) }}</span></p>

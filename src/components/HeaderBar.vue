@@ -1,6 +1,6 @@
 <template>
   <nav class="header">
-    <router-link to="./">
+    <router-link to="/">
       <h2>wimp.dev</h2>
     </router-link>
   </nav>
