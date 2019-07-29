@@ -28,7 +28,6 @@ export default {
 }
 
 .header:hover {
-  background: beige;
-  scale: 1.2;
+  color: mediumpurple;
 }
 </style>
