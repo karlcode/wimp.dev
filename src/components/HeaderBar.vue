@@ -1,7 +1,9 @@
 <template>
   <nav class="header">
     <router-link to="/">
-      <h2>wimp.dev</h2>
+      <div class="title">
+        <p>wimp.dev</p>
+      </div>
     </router-link>
   </nav>
 </template>
@@ -13,18 +15,30 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 767px) {
+  .header {
+    padding: 0 20px;
+  }
+}
 .header {
   z-index: 999;
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  
   top: 0;
   left: 0;
   position: fixed;
   width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  text-align: center;
+  text-align: left;
   transition: 1s all;
+  color: black;
+}
+
+.title {
+  max-width: 700px;
+  margin: auto;
+
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
 }
 
 .header:hover {

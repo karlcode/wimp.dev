@@ -17,14 +17,18 @@
     </div>
   </div>
   <!-- If no blog posts return message -->
-  <div v-else class="blog-main">
-    <p>Loader spinner here</p>
-  </div>
+  <content-loader v-else
+      :speed="2"
+      :animate="true"
+    ></content-loader>
 </template>
 
 <script>
+import { ContentLoader } from "vue-content-loader";
+
 export default {
   name: "blog-posts",
+  components: {ContentLoader},
   data() {
     return {
       posts: [],
