@@ -81,8 +81,8 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  padding-top: 100px;
+.home { 
+  padding-top: 30px;
   max-width: 700px;
   margin: auto;
   text-align: center;

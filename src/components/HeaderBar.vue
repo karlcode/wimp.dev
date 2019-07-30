@@ -1,9 +1,7 @@
 <template>
   <nav class="header">
     <router-link to="/">
-      <div class="title">
-        <p>wimp.dev</p>
-      </div>
+      <div class="title">wimp.dev</div>
     </router-link>
   </nav>
 </template>
@@ -36,9 +34,9 @@ export default {
   max-width: 700px;
   margin: auto;
 
-  font-size: 50px;
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
   font-weight: 900;
-  line-height: 60px;
 }
 
 .header:hover {
