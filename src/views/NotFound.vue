@@ -2,7 +2,7 @@
   <div class="main">
     <div class="outer-container">
       <div class="back">
-        <router-link to="./">back to list</router-link>
+        <router-link to="/">back to list</router-link>
       </div>
 
       <h1>Page not found</h1>

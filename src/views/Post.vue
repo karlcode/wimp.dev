@@ -3,7 +3,7 @@
     <div class="outer-container">
       <div class="back">
         <!-- How to get router-link to work? -->
-        <router-link to="./">back to list</router-link>
+        <router-link to="/">back to list</router-link>
       </div>
       <!-- Button to edit document in dashboard -->
       <prismic-edit-button :documentId="documentId"/>
