@@ -8,6 +8,13 @@ import Post from './views/Post.vue'
 Vue.use(Router)
 
 export default new Router({
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 500)
+    })
+  },
   mode: 'history',
   routes: [
     // {
@@ -39,11 +46,4 @@ export default new Router({
       redirect: { name: 'not-found' }
     }
   ],
-  scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
-  }
 })
